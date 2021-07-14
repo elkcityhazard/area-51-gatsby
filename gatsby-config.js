@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "Area 51 Paintball - Mancelona, Michigan",
+    title: "Area 51 Paintball",
+    subtitle: "#fortheloveofthegame",
+    description: "Located just northest from Traverse City, Michigan, Area 51 Paintball is Northern Michigan's premier paintball destination."
   },
   plugins: [
     "gatsby-plugin-sass",

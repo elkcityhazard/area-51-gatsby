@@ -1,0 +1,60 @@
+@mixin text-shadow {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.66);
+  }
+  
+  @mixin transition {
+    transition: all 250ms ease;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+  }
+  
+  @keyframes shrinkHeight {
+    from {
+      height: 100%;
+    }
+    to {
+      height: 0;
+    }
+  }
+@mixin fancy-btn {
+    a {
+        @include text-shadow;
+        @include transition;
+        background: transparent;
+        border: 2px solid hsl(70, 50%, 75%);
+        display: inline-block;
+        font-size: 1.25em;
+        font-weight: 700;
+        margin: 1em auto;
+        overflow: hidden;
+        padding: 0.5em 1em;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        z-index: 2;
+    
+        &::before {
+          @include transition;
+          content: "";
+          background: hsl(70, 50%, 75%);
+          display: block;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          transform: translateX(-100%);
+          width: 100%;
+          z-index: 1;
+        }
+        &:hover {
+          color: hsl(70, 50%, 75%);
+          border-color: #fff;
+          &::before {
+            animation: shrinkHeight 250ms ease-out 250ms forwards;
+            transform: translateX(0);
+            transform-origin: bottom;
+          }
+        }
+      }
+}

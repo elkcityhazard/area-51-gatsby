@@ -1,0 +1,76 @@
+@mixin transition {
+    transition: all 250ms linear;
+        -webkit-transition: all 250ms linear;
+        -moz-transition: all 250ms linear;
+}
+
+.row {
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-around;
+    padding: {
+        top: 1em;
+        bottom: 1em;
+    }
+    a {
+        border: {
+            bottom: 2px solid hsl(70, 50%, 75%);
+        }
+        color: #fff;
+        font-weight: 800;
+        padding-bottom: 7px;
+        text-decoration: none;
+        #alien {
+            color: hsl(70, 50%, 75%);
+        }
+    }
+}
+
+.menu-btn {
+    @include transition;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: {
+        top: .25em;
+        right: .25em;
+        bottom: 0;
+        left: .25em;
+    }
+    &:hover {
+        background:rgba(0, 0, 0, 0.5);
+        color: hsl(70, 50%, 75%);
+
+    }
+}
+
+.nav-bar {
+    background: rgba(0, 0, 0, 0.5);
+    height: 0;
+    overflow: hidden;
+    @include transition;
+    a {
+        border: 1px solid transparent;
+        color: #e6e6e6;
+        display: block;
+        font-size: 1.25em;
+        font-weight: 700;
+        margin: 0.25em auto;
+        max-width: 150px;
+        padding: 1em 1.5em;
+        text-align: center;
+        text-decoration: none;
+        @include transition;
+        &:hover {
+            border-color: hsl(70, 50%, 75%);
+        }
+        &.active {
+            color: hsl(70, 50%, 75%) !important;
+        }
+    }
+    
+}
