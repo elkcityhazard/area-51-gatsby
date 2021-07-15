@@ -48,7 +48,7 @@
   // Main Header
   header.main-header {
     background: no-repeat fixed center center / cover;
-    background-image: url("../images/paintball-in-forest-1080.jpg");
+    background-image: url("../images/paintball-in-forest-small.jpg");
     color: #fff;
     display: grid;
     grid-template-columns: 1fr;
@@ -236,7 +236,6 @@
           font-weight: 800;
         }
         ul {
-          
           list-style-position: inside;
         }
         span,
@@ -318,9 +317,13 @@
       ul {
         li {
           a {
+            @include transition;
             display: block;
             text-decoration: none;
             text-transform: lowercase;
+            &:hover {
+              color: #fff;
+            }
           }
         }
       }
