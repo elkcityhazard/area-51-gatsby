@@ -4,13 +4,19 @@ import Header from '../components/Header'
 import About from '../components/About';
 import Pricing from '../components/Pricing';
 import Contact from '../components/Contact'
+import Footer from '../components/Footer';
+import BrandBar from '../components/BrandBar'
+import SEO from '../components/SEO';
 import '../styles/global.scss'
 
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({data}) => {
   return (
-   <main>
+    <>
+    
+    <div className="wrapper">
+      <main>
      <Header>
        <NavBar />
      </Header>
@@ -18,6 +24,10 @@ const IndexPage = () => {
      <Pricing></Pricing>
      <Contact></Contact>
    </main>
+   <Footer></Footer>
+   <BrandBar />
+    </div>
+    </>
   )
 }
 
