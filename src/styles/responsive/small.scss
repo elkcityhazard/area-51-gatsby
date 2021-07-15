@@ -224,18 +224,20 @@
       display: flex;
       flex-direction: column;
       margin: auto;
-      padding: 0 1em;
+      padding: 0;
       .price-card{
         background: hsla(49, 18%, 36%, 10%);
+        border: 1px solid #fff;
         flex: 1 1 100%;
-        margin: 1em;
+        margin: 1em auto;
         padding: 1em;
         .price {
           font-size: 1.25em;
           font-weight: 800;
         }
         ul {
-          padding: 0;
+          
+          list-style-position: inside;
         }
         span,
         p,
