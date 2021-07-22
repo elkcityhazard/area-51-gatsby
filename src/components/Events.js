@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import EventCard from './EventCard'
 
 
 const Events = (props) => {
@@ -11,7 +12,7 @@ const Events = (props) => {
             <h3>{props.title}</h3>
             <div className="container">
             {nodes.map((event) => {
-                return <h4>{event.Title}</h4>;
+                return <EventCard Title={event.Title} image={event.image}  />
             })}
             </div>
         </section>
