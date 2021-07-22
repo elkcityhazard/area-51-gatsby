@@ -6,6 +6,9 @@ import Pricing from '../components/Pricing';
 import Contact from '../components/Contact'
 import Footer from '../components/Footer';
 import BrandBar from '../components/BrandBar'
+import Background from '../components/Background'
+import Cta from '../components/Cta'
+import Events from '../components/Events'
 import SEO from '../components/SEO';
 import '../styles/global.scss'
 
@@ -21,7 +24,12 @@ const IndexPage = ({data}) => {
        <NavBar />
      </Header>
      <About></About>
+     <Background>
+    <Cta />
+       
+        </Background>
      <Pricing></Pricing>
+     <Events title="Events" />
      <Contact></Contact>
    </main>
    <Footer></Footer>

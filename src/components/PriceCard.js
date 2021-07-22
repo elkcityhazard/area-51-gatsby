@@ -16,7 +16,8 @@ const PricingCard = (props) => {
             }
           </ul>
           <span className="extras">{extras}</span>
-          <p>{description}</p>
+          <button>View More</button>
+          <p className="description">{description}</p>
       </div>
   )
 };

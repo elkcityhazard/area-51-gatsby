@@ -114,15 +114,59 @@
     }
     section.pricing {
       margin: 1em auto;
-      max-width: 968px;
+      max-width: 1368px;
       .pricing-container {
        flex-direction: row;
        flex-wrap: wrap;
         .price-card {
-          flex: 1 1 40%;
+          @include transition;
+          border-radius: 10px;
+          box-shadow: 2px 2px 20px -10px rgba(255,255,255,1);
+          flex: 1 1 20%;
           margin: 1em;
+          max-height: 100vh;
+          padding: 0;
+          padding-bottom: 1em;
+          overflow: auto;
+          h3 {
+            align-items: center;
+            border: {
+              top: 2px solid green;
+              bottom: 2px solid green;
+            }
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            min-height: 75px;
+            padding: .33em;
+            vertical-align: center;
+          }
+          span.price {
+            background:rgba(0, 0, 0, 0.66);
+            border: {
+              top: 2px solid green;
+              bottom: 2px solid green;
+            }
+            color:hsl(70, 50%, 75%);
+            display: block;
+            font-size: 3em;
+            text-align: center;
+          }
           ul {
-            margin-left: 1em;
+            list-style-image: url('../images/paintballs.png');
+            margin: {
+              top: 1em;
+              right: auto;
+              bottom: 1em;
+              left: 1em;
+            };
+          }
+          p.description {
+            display: none;
+            padding: 1em;
+          }
+          &:hover {
+            box-shadow: 2px 2px 20px -5px green;
           }
         }
       }

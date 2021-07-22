@@ -226,14 +226,21 @@
       margin: auto;
       padding: 0;
       .price-card{
-        background: hsla(49, 18%, 36%, 10%);
-        border: 1px solid #fff;
+        background: #fff; //  hsla(49, 18%, 36%, 10%);
+        border: 2px solid #008000;
+        color: forestgreen;
         flex: 1 1 100%;
         margin: 1em auto;
-        padding: 1em;
+        padding: 1em 1em 2em 1em;
+        h3 {
+          color: green;
+        }
         .price {
           font-size: 1.25em;
           font-weight: 800;
+        }
+        .extras {
+          font-weight: 700;
         }
         ul {
           list-style-position: inside;
@@ -255,10 +262,46 @@
 
   }
 
+  //  CTA
+  section.cta {
+    padding: 1em;
+    text-align: center;
+    h3 {
+      font-size: 2em;
+      text-transform: capitalize;
+    }
+    .container {
+      width: 100%;
+    }
+    form {
+      line-height: 1.5;
+      width: 100%;
+      .form-control {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        input {
+          border: none;
+          font-size: 1em;
+          flex: 0 0 100%;
+          margin: 1em auto;
+          padding: 1em;
+          width: 100%;
+        }
+        input[type=submit] {
+          flex: 0 0 100%;
+          max-width: 350px;
+        }
+      }
+    }
+  }
+
   //  Footer
   footer.main-footer {
     align-items: center;
-    background: hsl(62, 23%, 24%);
+    background: hsla(62, 23%, 24%, 25%);
     display: grid;
     gap: 1em;
     grid-template-columns: repeat(auto-fill, minmax(100%));
@@ -331,6 +374,7 @@
         padding: 0;
         width: 100%;
         span {
+          padding: .33em 0 .33em .25em;
           &:first-of-type {
             font-weight: 800;
         }
@@ -342,7 +386,7 @@
   //  brand bar
   .brand-bar {
     align-items: center;
-    background: hsl(30, 13%, 6%);
+    background: hsla(49, 18%, 36%, 10%);
     display: grid;
     justify-content: center;
     padding: .25em 1em;
