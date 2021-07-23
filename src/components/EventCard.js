@@ -1,16 +1,16 @@
 import React from 'react'
-import { StaticImage, getImage } from 'gatsby-plugin-image'
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
 
 function EventCard(props) {
-    const imageData = getImage(props.image)
+    const image = getImage(props.image)
     return (
         <div className="event-panel">
             <div className="inner-panel">
                 <div className="row">
-                    <h4>{props.Title}</h4>
+                    <h4>{props.title}</h4>
                 </div>
                 <div className="row">
-                    <div className="col"><StaticImage src={props.image} /></div>
+                    <div className="col"><GatsbyImage image={props.image} /></div> 
                     <div className="col"></div>
                 </div>
             </div>
@@ -18,4 +18,4 @@ function EventCard(props) {
     )
 }
 
-export default EventCard
+export default EventCard;
