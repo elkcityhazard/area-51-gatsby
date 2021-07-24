@@ -191,9 +191,14 @@
       .event-panel {
         background: #1f1e15;
         margin: {
-          bottom: 5em;
+          top: 2.5em;
+          right: auto;
+          bottom: 2.5em;
+          left: auto;
         }
+        max-width: 1200px;
         padding: 1em 1.5em;
+        width: 100%;
         .inner-panel {
           .row {
             align-items: center;
@@ -201,8 +206,13 @@
             justify-content: center;
             flex-direction: row;
             .col {
+              flex: 1 1 50%;
               strong {
                 color: hsl(70, 50%, 75%);
+              }
+              .date,
+              .cost {
+                font-size: .75em;
               }
             }
           }

@@ -4,6 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Links from '../constants/Links';
 import { FaFacebook } from 'react-icons/fa'
 
+
 const Footer = (props) => {
     return (
         <footer className="main-footer">
@@ -14,7 +15,7 @@ const Footer = (props) => {
                 <h4>Links</h4>
                 <ul>
                     {Links.map((link) =>{
-                        return <li><Link to={link.url}>{link.text}</Link></li>
+                        return <li><Link key={link.id} to={link.url}>{link.text}</Link></li>
                     })}
                 </ul>
             </div>
