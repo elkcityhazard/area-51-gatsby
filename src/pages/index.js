@@ -9,7 +9,6 @@ import BrandBar from '../components/BrandBar'
 import Background from '../components/Background'
 import Cta from '../components/Cta'
 import Events from '../components/Events'
-import SEO from '../components/SEO';
 import '../styles/global.scss'
 
 

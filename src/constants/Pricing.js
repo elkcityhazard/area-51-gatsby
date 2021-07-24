@@ -30,7 +30,7 @@ const data = [
         id: 3,
         title: "Area 51 Full Rental",
         price : "$45",
-        includes: ['A Paintball Mask', 'A Paintball Marker', 'A Pod Pack With 2 Pods', '500 Rounds Of Paintballs', 'Field Pass \& All Day Air'],
+        includes: ['A Paintball Mask', 'A Paintball Marker', 'A Pod Pack With 2 Pods', '500 Rounds Of Paintballs', 'Field Pass & All Day Air'],
         extras: "",
         description: "Full Rental Registration includes: A Paintball Mask, A Paintball Marker, A Pod Pack with 2 Pods, 500 rounds of Paintballs, Field Pass and All Day Air all for only $45. "
     },

@@ -130,6 +130,7 @@
           overflow: auto;
           h3 {
             align-items: center;
+            font-size: 1.25em;
             border: {
               top: 2px solid green;
               bottom: 2px solid green;
@@ -192,6 +193,7 @@
         margin: {
           bottom: 5em;
         }
+        padding: 1em 1.5em;
         .inner-panel {
           .row {
             align-items: center;

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import '../styles/components/link-btn.scss'
 
 
@@ -16,7 +15,7 @@ const PricingCard = (props) => {
             }
           </ul>
           <span className="extras">{extras}</span>
-          <button>View More</button>
+          <hr style={{color: "black"}} />
           <p className="description">{description}</p>
       </div>
   )

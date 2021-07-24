@@ -1,14 +1,13 @@
 import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage} from "gatsby-plugin-image";
 
 function EventCard(props) {
-  const image = getImage(props.image);
   return (
     <div className="event-panel">
       <div className="inner-panel">
         <div className="row">
           <div className="col">
-            <GatsbyImage image={props.image} placeholder="blurred" alt={props.title} />
+            <GatsbyImage image={props.image} placeholder="blurred" alt={props.title}/>
           </div>
           <div className="col">
             <div className="row">

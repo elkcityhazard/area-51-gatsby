@@ -344,6 +344,9 @@
     &::before {
       top: -1px;
     }
+    &::after {
+      bottom: -1px;
+    }
     }
   }
 

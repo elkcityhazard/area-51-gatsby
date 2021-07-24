@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from 'gatsby-background-image'
@@ -37,7 +37,6 @@ const GbiBridged = ({children}) => {
           justifyContent: "center",
           width: "100%"
           }}>
-        {/* <GatsbyImage image={image} alt={"paintball"}/>  */}
         {children}
       </div>
     </BackgroundImage>
