@@ -184,6 +184,30 @@
       }
     }
 
+
+    // Events
+    section.events {
+      .event-panel {
+        background: #1f1e15;
+        margin: {
+          bottom: 5em;
+        }
+        .inner-panel {
+          .row {
+            align-items: center;
+            background: transparent;
+            justify-content: center;
+            flex-direction: row;
+            .col {
+              strong {
+                color: hsl(70, 50%, 75%);
+              }
+            }
+          }
+        }
+      }
+    }
+
     //  Footer
     footer.main-footer {
       padding: 1em;

@@ -298,6 +298,55 @@
     }
   }
 
+  //  Events
+  section.events {
+    h3 {
+      text-align: center;
+    }
+    .event-panel {
+      position: relative;
+      .inner-panel {
+        .row {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+          font-size: 1.25em;
+          justify-content: center;
+          padding: 1em;
+          .col {
+            flex: 1 1 50%;
+            .row {
+              justify-content: flex-start;
+              h4 {
+                border: {
+                  bottom: 1px solid #fff;
+                }
+                margin: 1em auto;
+                padding-bottom: 1em;
+                text-align: center;
+              }
+              .date {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      &::before,
+    &::after {
+      background: linear-gradient(0.25turn, #110f0d, #1f1e15, #d5df9f, #fff);
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+    &::before {
+      top: -1px;
+    }
+    }
+  }
+
   //  Footer
   footer.main-footer {
     align-items: center;

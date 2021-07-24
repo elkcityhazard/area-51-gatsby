@@ -12,8 +12,17 @@ const Events = (props) => {
             <h3>{props.title}</h3>
             <div className="container">
             {edges.map((event) => {
-              console.log(event.node.event_image)
-              return <EventCard key={event.node.id} title={event.node.title} image={event.node.event_image.localFile.childImageSharp.gatsbyImageData}  />    //title={event.title} 
+              console.log(event.node.event_description)
+              return <EventCard 
+                        key={event.node.id} 
+                        title={event.node.title} 
+                        image={event.node.event_image.localFile.childImageSharp.gatsbyImageData} 
+                        start_date={new Date(event.node.start_date).toLocaleDateString() + ' ' + new Date(event.node.start_date).toLocaleTimeString()} 
+                        end_date={new Date(event.node.end_date).toLocaleDateString() + ' ' + new Date(event.node.start_date).toLocaleTimeString()} 
+                        price={event.node.price} 
+                        description={event.node.event_description.map((desc) => {
+                            return desc.event_description
+                        })} />    
             })} 
             </div>
         </section>
@@ -44,6 +53,7 @@ const query = graphql`
             }
           }
         }
+        price
       }
     }
   }
