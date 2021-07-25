@@ -12,7 +12,10 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "frontend": "gatsby develop",
+    "backend": "cd area-51-strapi && npm run develop",
+    "both": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "dependencies": {
     "axios": "^0.21.1",
