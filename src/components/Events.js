@@ -10,7 +10,7 @@ const Events = (props) => {
     const {edges} = data.allStrapiEvent;
     
     return (
-        <section className="events">
+        <section className="events" id="events">
             <h3>{props.title}</h3>
             <div className="container">
             {edges.map((event) => {

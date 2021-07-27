@@ -42,6 +42,13 @@ const data = [
         "Area 51 event and party pricing",
       color: "hsl(70, 50%, 75%)",
     },
+    {
+      id: 6,
+      text: "Events",
+      url: "#events",
+      description: "Area 51 upcoming events",
+      color: "hsl(30, 13%, 6%)"
+    }
   ]
 
   export default data
