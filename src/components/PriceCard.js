@@ -1,5 +1,6 @@
 import * as React from "react";
 import '../styles/components/link-btn.scss'
+var key = 0;
 
 
 const PricingCard = (props) => {
@@ -10,7 +11,8 @@ const PricingCard = (props) => {
           <span className="price">{price}</span>
           <ul>
               {includes.map((item) => {
-                  return <li>{item}</li>
+                {key++}
+                  return <li key={key}>{item}</li>
               })
             }
           </ul>

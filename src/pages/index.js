@@ -13,7 +13,7 @@ import '../styles/global.scss'
 
 
 // markup
-const IndexPage = ({data}) => {
+const IndexPage = ({children}) => {
   return (
     <>
     
@@ -28,7 +28,7 @@ const IndexPage = ({data}) => {
        
         </Background>
      <Pricing></Pricing>
-     <Events title="Events" />
+     <Events />
      <Contact></Contact>
    </main>
    <Footer></Footer>

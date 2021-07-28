@@ -1,13 +1,14 @@
 import React from "react";
-import { GatsbyImage} from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 function EventCard(props) {
+  const image = getImage(props.image)
   return (
     <div className="event-panel">
       <div className="inner-panel">
         <div className="row">
-          <div className="col">
-            <GatsbyImage image={props.image} placeholder="blurred" alt={props.title} loading="lazy" objectFit="cover"/>
+          <div className="col" style={{minHeight: "500px"}}>
+          <GatsbyImage image={image} alt={props.title} loading="lazy" placeholder="blurred" />
           </div>
           <div className="col">
             <div className="row">
@@ -20,7 +21,7 @@ function EventCard(props) {
             <div className="row">
               <span class="cost"><strong>Cost: &nbsp;</strong> ${props.price}</span>
             </div>
-            {/* <div className="row" style={{
+             <div className="row" style={{
               flexDirection: "column",
               justifyContent: "flex-start"
               }}>
@@ -28,7 +29,7 @@ function EventCard(props) {
                 <div className="description">
                 {props.description}
             </div>
-          </div> */}
+          </div> 
         </div>
       </div>
     </div>

@@ -30,6 +30,7 @@
     "gatsby-plugin-sitemap": "^4.5.0",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-source-strapi": "^1.0.2",
+    "gatsby-transformer-remark": "^4.7.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "gbimage-bridge": "^0.1.4",
     "react": "^17.0.1",

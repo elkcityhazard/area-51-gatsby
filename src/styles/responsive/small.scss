@@ -237,14 +237,15 @@
       margin: auto;
       padding: 0;
       .price-card{
-        background: #fff; //  hsla(49, 18%, 36%, 10%);
+        background:transparent;
         border: 2px solid #008000;
         color: forestgreen;
         flex: 1 1 100%;
         margin: 1em auto;
         padding: 1em 1em 2em 1em;
         h3 {
-          color: green;
+          background: transparent;
+          color: hsl(70, 50%, 75%);
         }
         .price {
           font-size: 1.25em;

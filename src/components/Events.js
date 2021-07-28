@@ -1,75 +1,57 @@
-import * as React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import React from "react";
+import { StaticQuery, graphql } from "gatsby";
 import EventCard from './EventCard'
 
-const today = new Date();
-
-
-const Events = (props) => {
-    const data = useStaticQuery(query);
-    const {edges} = data.allStrapiEvent;
-    
-    return (
-        <section className="events" id="events">
-            <h3>{props.title}</h3>
-            <div className="container">
-            {edges.map((event) => {
-              const eventDate = new Date(event.node.start_date);
-              console.log('event date:', eventDate)
-              if (eventDate >= today) {
-                const options = {
-                  dateStyle: "short",
-                  timeStyle: "short"
-                  
-                 
+const Events = () => (
+  <StaticQuery
+    query={graphql`
+    {
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data/"}}) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              description
+              price
+              slug
+              startDate
+              endDate
+              startTime
+              endTime
+              img {
+                childImageSharp {
+                  gatsbyImageData(jpgOptions: {quality: 75}, webpOptions: {quality: 50})
                 }
-                return <EventCard 
-                key={event.node.id} 
-                title={event.node.title} 
-                image={event.node.event_image.localFile.childImageSharp.gatsbyImageData} 
-                start_date={new Date(event.node.start_date).toLocaleString('en-us', options)} 
-                end_date={new Date(event.node.end_date).toLocaleString('en-us', options)} 
-                price={event.node.price} 
-                description={event.node.event_description.map((desc) => {
-                    return desc.event_description
-                })} />  
-              }  
-            })} 
-            </div>
-        </section>
-    )
-}
-
-const query = graphql`
-{
-  allStrapiEvent {
-    edges {
-      node {
-        end_date
-        event_description {
-          event_description
-        }
-        id
-        start_date
-        title
-        event_image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                placeholder: BLURRED
-                breakpoints: [499, 768, 986 1360,1920]
-                width: 500
-                formats: [AUTO, WEBP, AVIF],
-                
-              )
+              }
             }
+            html
           }
         }
-        price
       }
     }
-  }
-}
-`
+  `}
+    render={(data) => {
+      const { allMarkdownRemark } = data;
+      const { edges } = allMarkdownRemark;
+      
+      return (
+        <section className="events" id="events">
+          <h3>Events</h3>
+          {
+            edges.map((edge) => {
+              const {title, description, price, startTime, endTime, startDate, endDate} = edge.node.frontmatter;
+              const featuredImage = edge.node.frontmatter.img.childImageSharp.gatsbyImageData;
+              console.log(featuredImage)
+              return(
+                <EventCard title={title} start_date={startDate} end_date={endDate} price={price} description={description} image={featuredImage}/>
+              )
+            })
+          }
+        </section>
+      );
+    }}
+  ></StaticQuery>
+);
 
 export default Events;
