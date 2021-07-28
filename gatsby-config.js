@@ -45,14 +45,5 @@ module.exports = {
       __key: "data",
     },
     `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-source-strapi`,
-      options: {
-        apiURL: `https://cms.protoweb.io`,
-        queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`event`],
-        singleTypes: [],
-      },
-    },
   ],
 };
