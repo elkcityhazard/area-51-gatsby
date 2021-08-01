@@ -1,57 +1,68 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import EventCard from './EventCard'
 
-const Events = () => (
-  <StaticQuery
-    query={graphql`
-    {
-      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/data/"}}) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              description
-              price
-              slug
-              startDate
-              endDate
-              startTime
-              endTime
-              img {
-                childImageSharp {
-                  gatsbyImageData(jpgOptions: {quality: 75}, webpOptions: {quality: 50})
-                }
-              }
-            }
-            html
+const Events = () => {
+  const data = useStaticQuery(query);
+  const {allMarkdownRemark: {nodes:markdownRemark}} = data;
+  const [value, setValue] = React.useState(0);
+  const {id} = markdownRemark;
+  const {title, description, price, startTime, endTime, startDate, endDate} = markdownRemark[value].frontmatter;
+  const {frontmatter:{img:{childImageSharp: {gatsbyImageData}}}} = markdownRemark[value];
+  
+  return (
+    <section className="events" id="events">
+      <h3>Events</h3>
+      <div className="btn-container">
+        { markdownRemark.map((item, index) => {
+          console.log(item.frontmatter.title);
+          return (
+            <button 
+              key={index} 
+              className={index === value ? "event-btn active-btn" : "event-btn"} 
+              onClick={() => {setValue(index)}}
+              >
+                {item.frontmatter.title}
+              </button>
+          )
+        })} 
+      </div>
+        <div className="event-container">
+            <EventCard title={title} start_date={startDate} end_date={endDate} price={price} description={description} image={gatsbyImageData}/>
+          
+        </div>
+    </section>
+  )};
+  
+
+const query = graphql`
+{
+  allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/data/"}}
+    sort: {fields: frontmatter___startDate}
+  ) {
+    nodes {
+      id
+      frontmatter {
+        date
+        description
+        endDate
+        endTime
+        img {
+          childImageSharp {
+            gatsbyImageData(jpgOptions: {quality: 75}, webpOptions: {quality: 59})
           }
+          id
         }
+        price
+        slug
+        startDate
+        startTime
+        title
       }
     }
-  `}
-    render={(data) => {
-      const { allMarkdownRemark } = data;
-      const { edges } = allMarkdownRemark;
-      
-      return (
-        <section className="events" id="events">
-          <h3>Events</h3>
-          {
-            edges.map((edge) => {
-              const {title, description, price, startTime, endTime, startDate, endDate} = edge.node.frontmatter;
-              const featuredImage = edge.node.frontmatter.img.childImageSharp.gatsbyImageData;
-              console.log(featuredImage)
-              return(
-                <EventCard title={title} start_date={startDate} end_date={endDate} price={price} description={description} image={featuredImage}/>
-              )
-            })
-          }
-        </section>
-      );
-    }}
-  ></StaticQuery>
-);
+  }
+}
+`
 
 export default Events;

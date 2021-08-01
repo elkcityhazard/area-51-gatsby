@@ -11,7 +11,7 @@ const PricingCard = (props) => {
           <span className="price">{price}</span>
           <ul>
               {includes.map((item) => {
-                {key++}
+                
                   return <li key={key}>{item}</li>
               })
             }

@@ -21,6 +21,7 @@ const GbiBridged = ({children}) => {
   const image = getImage(placeholderImage)
 
   const bgImage = convertToBgImage(image)
+ 
 
   return (
     <BackgroundImage

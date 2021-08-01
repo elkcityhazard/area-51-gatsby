@@ -40,7 +40,7 @@ class NavBar extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container" style={{backgroundColor: "transparent"}}>
                 <div className="row">
                     <Link to="/" title="Area 51 Paintball">Area <span id="alien">51</span> Paintball</Link>
                     

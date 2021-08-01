@@ -2,6 +2,7 @@ import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 function EventCard(props) {
+  const startDate = new Date(props.start_date);
   const image = getImage(props.image)
   return (
     <div className="event-panel">
@@ -15,11 +16,11 @@ function EventCard(props) {
               <h4>{props.title}</h4>
             </div>
             <div className="row">
-              <span className="date"><strong>Start: </strong>{props.start_date} &nbsp;</span>
+              <span className="date"><strong>Start: </strong>{startDate.toLocaleString()} &nbsp;</span>
               <span className="date"><strong>End: </strong>{props.end_date}</span>
             </div>
             <div className="row">
-              <span class="cost"><strong>Cost: &nbsp;</strong> ${props.price}</span>
+              <span class="cost"><strong>Cost: &nbsp;</strong> {props.price}</span>
             </div>
              <div className="row" style={{
               flexDirection: "column",

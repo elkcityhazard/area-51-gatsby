@@ -1,6 +1,7 @@
 import * as React from "react";
 import NavBar from '../components/NavBar';
-import Header from '../components/Header'
+import GbiBridged from '../components/Header'
+import HeaderData from '../components/HeaderData'
 import About from '../components/About';
 import Pricing from '../components/Pricing';
 import Contact from '../components/Contact'
@@ -16,12 +17,13 @@ import '../styles/global.scss'
 const IndexPage = ({children}) => {
   return (
     <>
-    
+    <GbiBridged>
+      <HeaderData>
+        <NavBar />
+      </HeaderData>
+    </GbiBridged>
     <div className="wrapper">
       <main>
-     <Header>
-       <NavBar />
-     </Header>
      <About></About>
      <Background>
     <Cta />
