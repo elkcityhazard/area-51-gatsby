@@ -34,9 +34,7 @@ const GbiBridged = ({children}) => {
     {...bgImage} 
     // preserveStackingContext
     >
-      <div>
       {children}
-      </div>
       
     </BackgroundImage>
   )

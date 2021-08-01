@@ -22,7 +22,11 @@ h3,
 h4,
 h5,
 h6 {
+  color: hsl(70, 50%, 75%);
+  font-family: "Roboto Mono", monospace;
   font-weight: 700;
+  margin: 1em auto;
+
   padding: {
     top: 0;
     right: 1em;

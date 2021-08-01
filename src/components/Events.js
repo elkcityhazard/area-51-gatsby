@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import EventCard from './EventCard'
 
 const Events = () => {
@@ -7,7 +7,7 @@ const Events = () => {
   const {allMarkdownRemark: {nodes:markdownRemark}} = data;
   const [value, setValue] = React.useState(0);
   const {id} = markdownRemark;
-  const {title, description, price, startTime, endTime, startDate, endDate} = markdownRemark[value].frontmatter;
+  const {title, description, price, startTime, endTime, startDate, endDate, slug} = markdownRemark[value].frontmatter;
   const {frontmatter:{img:{childImageSharp: {gatsbyImageData}}}} = markdownRemark[value];
   
   return (
@@ -15,7 +15,6 @@ const Events = () => {
       <h3>Events</h3>
       <div className="btn-container">
         { markdownRemark.map((item, index) => {
-          console.log(item.frontmatter.title);
           return (
             <button 
               key={index} 
@@ -28,7 +27,9 @@ const Events = () => {
         })} 
       </div>
         <div className="event-container">
-            <EventCard title={title} start_date={startDate} end_date={endDate} price={price} description={description} image={gatsbyImageData}/>
+          
+            <EventCard title={title} start_date={startDate} end_date={endDate} price={price} description={description} image={gatsbyImageData} slug={slug}/>
+
           
         </div>
     </section>

@@ -9,7 +9,7 @@ const Footer = (props) => {
     return (
         <footer className="main-footer">
             <div className="col">
-                <StaticImage src="../images/alien-thumbs-up-transparent.png" alt="Alien" objectFit="cover" placeholder="blurred" loading="lazy" layout="fixed" height={200} width={200} />
+                <StaticImage src="../images/area-51-logo.jpg" alt="Alien" objectFit="cover" placeholder="blurred" loading="lazy" layout="fixed" height={200} width={325} style={{marginRight: "1em"}}/>
             </div>
             <div className="col">
                 <h4>Links</h4>

@@ -10,9 +10,9 @@
 }
 
 @mixin transition {
-  transition: all 250ms ease;
-  -webkit-transition: all 250ms ease;
-  -moz-transition: all 250ms ease;
+  transition: all 250ms linear;
+  -webkit-transition: all 250ms linear;
+  -moz-transition: all 250ms linear;
 }
 
 @keyframes shrinkHeight {
@@ -48,6 +48,59 @@
 
   section > h3 {
     font-size: 2.5em;
+  }
+
+  main.page {
+    text-align: center;
+    padding: {
+      top: 0;
+      right: 1em;
+      bottom: 0;
+      left: 1em;
+    }
+  }
+
+  article.page-article {
+    margin: 1em auto;
+    max-width: 60ch;
+    ul {
+      display: inline-block;
+      list-style: none;
+      width: auto;
+      margin: 0 auto;
+      padding: {
+        left: 0em;
+      }
+      list-style-position: inside;
+      li {
+        padding: 0 0em 0 .25em;
+      }
+    }
+    ul,
+    p {
+      font-family: 'Montserrat', sans-serif, Helvetica;
+      font-size: 1em;
+      line-height: 1.5;
+      text-align: left;
+    }
+    h2, h3, h4 {
+      font-size: 1.75em;
+    }
+    h2 {
+      position: relative;
+      text-align: center;
+      &::after {
+        content: '';
+        display: block;
+        height: 2px;
+        background: #fff;
+        left: 50%;
+        bottom: -0.5em;
+        position: absolute;
+        width: 100px;
+        transform: translateX(-50%);
+      }
+    }
   }
 
   // Main Header
@@ -312,6 +365,49 @@
 
   //  Events
   section.events {
+    font-size: 1em;
+    .description {
+      text-align: left;
+    }
+    a.learn-more {
+      @include text-shadow;
+      @include transition;
+      background: transparent;
+      border: 2px solid hsl(70, 50%, 75%);
+      display: inline-block;
+      font-size: 1em;
+      font-weight: 700;
+      margin: 1em auto;
+      overflow: hidden;
+      padding: 0.5em 1em;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      z-index: 2;
+
+      &::before {
+        @include transition;
+        content: "";
+        background: hsl(70, 50%, 75%);
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: translateX(-100%);
+        width: 100%;
+        z-index: 1;
+      }
+      &:hover {
+        color: hsl(70, 50%, 75%);
+        border-color: #fff;
+        &::before {
+          animation: shrinkHeight 250ms ease-out 250ms forwards;
+          transform: translateX(0);
+          transform-origin: bottom;
+        }
+      }
+    }
     h3 {
       font-size: 2.5em;
       text-align: center;
@@ -360,7 +456,7 @@
           align-items: flex-start;
           display: flex;
           flex-direction: column;
-          font-size: 1.25em;
+          font-size: 1em;
           justify-content: center;
           padding: 1em;
           .col {
@@ -404,6 +500,77 @@
       content: '';
       display: table;
       clear: both;
+    }
+  }
+
+  //  Gallery
+  section.gallery {
+    text-align: center;
+    .gallery-img {
+      cursor: pointer;
+    }
+    .closed {
+      @include transition;
+      height: 0;
+      width: 0;
+      overflow: hidden;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform-origin: center;
+      z-index: 4;
+    }
+    .fullscreen {
+      @include transition;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.87);
+      display: flex;
+      position: fixed;
+      opacity: 1;
+      top: 50%;
+      left: 50%;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      z-index: 4;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      transform-origin: center;
+      transition-delay: 500ms;
+      -webkit-transition-delay: 500ms;
+      button {
+        @include transition;
+        border: none;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      &:hover {
+        color: hsl(70, 50%, 75%);
+      }
+      }
+    }
+    .fullscreen-img {
+      @include transition;
+      opacity: 0;
+    }
+    .show-img {
+      @include transition;
+      transition-delay: 500ms;
+      -webkit-transition-delay: 500ms;
+      opacity: 1;
+    }
+    .image-container {
+      display: grid;
+      gap: 1em;
+      grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     }
   }
 
