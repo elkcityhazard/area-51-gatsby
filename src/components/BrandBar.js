@@ -1,7 +1,7 @@
 import * as React from 'react';
 import '../styles/components/brand-bar.scss'
 
-export default function() {
+const BrandBar = () => {
     const year = new Date().getFullYear();
     return (
         <div className="brand-bar">
@@ -13,3 +13,5 @@ export default function() {
         </div>
     )
 }
+
+export default BrandBar;

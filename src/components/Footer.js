@@ -14,7 +14,7 @@ const Footer = (props) => {
             <div className="col">
                 <h4>Links</h4>
                 <ul>
-                    {Links.map((link) =>{
+                    {Links.map((link, index) =>{
                         return <li><Link key={link.id} to={link.url}>{link.text}</Link></li>
                     })}
                 </ul>

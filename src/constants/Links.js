@@ -29,7 +29,7 @@ const data = [
     {
       id: 4,
       text: "Gallery",
-      url: "/#gallery",
+      url: "/gallery",
       description:
         "Check Us Out",
       color: "hsl(49, 18%, 36%)",

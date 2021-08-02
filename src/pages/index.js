@@ -1,13 +1,11 @@
 import * as React from "react";
 import Layout from '../components/Layout'
-
 import About from '../components/About';
 import Pricing from '../components/Pricing';
 import Contact from '../components/Contact'
 import Background from '../components/Background'
 import Cta from '../components/Cta'
 import Events from '../components/Events'
-import Gallery from '../components/Gallery'
 import '../styles/global.scss'
 
 
@@ -24,7 +22,6 @@ const IndexPage = ({children}) => {
         </Background>
      <Pricing></Pricing>
      <Events />
-     <Gallery />
      <Contact></Contact>
    </main>
    

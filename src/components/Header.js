@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import {getImage, GatsbyImage} from 'gatsby-plugin-image';
+import {getImage} from 'gatsby-plugin-image';
 import { convertToBgImage} from 'gbimage-bridge';
 import BackgroundImage from 'gatsby-background-image';
-import HeaderData from './HeaderData';
 
 const GbiBridged = ({children}) => {
   const { placeholderImage } = useStaticQuery(

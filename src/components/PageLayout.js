@@ -13,7 +13,7 @@ function PageLayout({children}) {
                 {children}
                 </article>
             </main>
-    <Footer></Footer>
+    <Footer key="0"></Footer>
    <BrandBar />
         </>
     )

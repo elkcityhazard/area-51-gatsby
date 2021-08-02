@@ -18,15 +18,16 @@ const Gallery = () => {
                 key={index} 
                 className={active === true ? "fullscreen-img show-img" : "fullscreen-image"} 
                 image={gatsbyImageData} />
-            <button onClick={()=> setActive(false)}><FaTimes size="40" /></button>
+            <button onClick={() => setActive(false)}><FaTimes size="40" /></button>
             </div>
             <div className="image-container">
                 {
                    nodes.map((item, index) => {
-                      return  <GatsbyImage key={index} className="gallery-img" image={item.childImageSharp.gatsbyImageData} onClick={() => {
+                      return (<GatsbyImage key={index} className="gallery-img" image={item.childImageSharp.gatsbyImageData} onClick={() => {
                           setIndex(index)
                           setActive(true)
                       }}/>
+                      )
                    })
                 }
             </div>
