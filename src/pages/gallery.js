@@ -11,11 +11,12 @@ const Gallery = () => {
     const {allFile: {nodes}} = data;
     const {childImageSharp: {gatsbyImageData}} = nodes[index]
     return (
+      <>
         <PageLayout>
             <section className="gallery">
             <h3>Gallery</h3>
             <div className={active === true ? 'fullscreen' : 'closed'}>
-                <GatsbyImage 
+                <GatsbyImage role="button" tabIndex="0"
                 key={index} 
                 className={active === true ? "fullscreen-img show-img" : "fullscreen-image"} 
                 image={gatsbyImageData}
@@ -25,7 +26,7 @@ const Gallery = () => {
             <div className="image-container">
                 {
                    nodes.map((item, index) => {
-                      return (<GatsbyImage key={index} className="gallery-img" image={item.childImageSharp.gatsbyImageData} onClick={() => {
+                      return (<GatsbyImage key={index} role="button" tabIndex={index} className="gallery-img" image={item.childImageSharp.gatsbyImageData} onClick={() => {
                           setIndex(index)
                           setActive(true)
                       }}/>
@@ -35,6 +36,7 @@ const Gallery = () => {
             </div>
         </section>
         </PageLayout>
+        </>
     )
 }
 
