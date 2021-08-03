@@ -28,7 +28,7 @@ const Footer = (props) => {
                            <span><a href="tel:+12315776252">(231) 577-6252</a></span>
                            <span><a href="mailto:a51valkencup@gmail.com">a51valkencup@gmail.com</a></span>
                            <span>
-                               <a href="https://www.facebook.com/A51Paintball/" rel="noreferrer nofollow" target="_blank"><FaFacebook to="https://www.facebook.com/A51Paintball/" size="20" /></a></span>
+                               <a href="https://www.facebook.com/A51Paintball/" rel="noreferrer nofollow" target="_blank"><FaFacebook to="https://www.facebook.com/A51Paintball/" size="30" /></a></span>
                        </address>
             </div>
         </footer>

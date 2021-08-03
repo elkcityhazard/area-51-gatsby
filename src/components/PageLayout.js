@@ -1,6 +1,5 @@
 import React from 'react'
 import NavBar from './NavBar';
-import HeaderData from './HeaderData'
 import Footer from './Footer';
 import BrandBar from './BrandBar'
 

@@ -9,15 +9,21 @@ const Gallery = () => {
     const [index, setIndex] = React.useState(0);
     const {allFile: {nodes}} = data;
     const {childImageSharp: {gatsbyImageData}} = nodes[index]
+
+    React.useEffect(() => {
+      setActive(false)
+      setIndex(0)
+    }, [])
     
     return (
         <section className="gallery">
             <h3>Gallery</h3>
-            <div className={active === true ? 'fullscreen' : 'closed'} onClick={() => setActive(false)}>
+            <div className={active === true ? 'fullscreen' : 'closed'}>
                 <GatsbyImage 
                 key={index} 
                 className={active === true ? "fullscreen-img show-img" : "fullscreen-image"} 
-                image={gatsbyImageData} />
+                image={gatsbyImageData}
+                 />
             <button onClick={() => setActive(false)}><FaTimes size="40" /></button>
             </div>
             <div className="image-container">
