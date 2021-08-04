@@ -26,12 +26,11 @@ const GbiBridged = ({children}) => {
   return (
     <BackgroundImage
       Tag="section"
-      // Spread bgImage into BackgroundImage:
-      {...bgImage}
-      preserveStackingContext
+      {...bgImage}  // needs to be spread into Background IMage
+      // preserveStackingContext
     >
       <div style={{
-          backgroundImage: "linear-gradient(.25turn, rgba(0,0,0,0.75), rgba(0,0,0,0.75)",
+          backgroundImage: "linear-gradient(.25turn, rgba(0,0,0,0.80), rgba(0,0,0,0.80)",
           minHeight: "75vh",
           display: "flex",
           alignItems: "center",
