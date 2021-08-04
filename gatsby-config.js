@@ -41,22 +41,5 @@ module.exports = {
       __key: "data",
     },
     `gatsby-transformer-remark`,
-    {
-      resolve: 'gatsby-plugin-favicons',
-      options: {
-        logo: './src/favicon.ico',
-        appName: 'Area 51 Paintball',
-        background: '#fff',
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          yandex: false,
-          windows: false
-        }
-      }
-    }
   ],
 };
