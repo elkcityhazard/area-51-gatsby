@@ -10,7 +10,7 @@ function EventCard(props) {
     <div className="event-panel">
       <div className="inner-panel">
         <div className="row">
-          <div className="col" style={{minHeight: "500px"}}>
+          <div className="col">
             <Link to={props.slug}>
 
           <GatsbyImage image={image} alt={props.title} loading="lazy" placeholder="blurred" />

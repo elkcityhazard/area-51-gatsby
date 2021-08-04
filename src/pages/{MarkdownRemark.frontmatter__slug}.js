@@ -2,6 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 import {GatsbyImage} from 'gatsby-plugin-image'
 import PageLayout from '../components/PageLayout'
+import SEO from '../components/SEO'
+
+
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -11,6 +14,13 @@ export default function Template({
   const {gatsbyImageData} = frontmatter.img.childImageSharp;
   return (
     <PageLayout>
+      <SEO
+      title={frontmatter.title}
+      description={frontmatter.description|| 'Wooded Paintball located near Mancelona, Micigan'}
+      image={frontmatter.image}
+      pathname={frontmatter.slug}
+      article
+    />
 <GatsbyImage image={gatsbyImageData} loading="lazy" placeholder="blurred" alt={frontmatter.title} />
 <div className="blog-post-container">
       <div className="blog-post">

@@ -323,8 +323,37 @@
       align-items: stretch;
       display: flex;
       flex-direction: column;
-      margin: auto;
+      margin: 1em auto;
+      max-width: 1366px;
       padding: 0;
+      .col {
+        flex: 1 1 100%;
+      }
+      .price-button {
+        @include transition;
+        background: transparent;
+        border: 1px solid hsl(70, 50%, 75%);
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        margin: .5em auto;
+        padding: .5em 1em;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.25em;
+        font-weight: 600;
+        max-width: 325px;
+        width: 100%;
+        &:hover {
+          animation: shrinkHeight;
+          background: hsl(70, 50%, 75%);
+          color: hsl(30, 13%, 6%);
+          @include text-shadow;
+        }
+        &.active {
+          background: hsl(70, 50%, 75%);
+          color:hsl(30, 13%, 6%);
+        }
+      }
       .price-card{
         background:transparent;
         border: 2px solid #008000;
@@ -391,9 +420,45 @@
           padding: 1em;
           width: 100%;
         }
-        input[type=submit] {
+        input[type=submit]{
+          @include text-shadow;
+          @include transition;
+          background: transparent;
+          border: 2px solid hsl(70, 50%, 75%);
+          display: inline-block;
           flex: 0 0 100%;
+          font-size: 1.25em;
+          font-weight: 700;
+          margin: 1em auto;
           max-width: 350px;
+          overflow: hidden;
+          padding: 0.5em 1em;
+          position: relative;
+          text-align: center;
+          text-decoration: none;
+          z-index: 2;      
+          &::before {
+            @include transition;
+            content: "";
+            background: hsl(70, 50%, 75%);
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            transform: translateX(-100%);
+            width: 100%;
+            z-index: 1;
+          }
+          &:hover {
+            color: hsl(70, 50%, 75%);
+            border-color: #fff;
+            &::before {
+              animation: shrinkHeight 250ms ease-out 250ms forwards;
+              transform: translateX(0);
+              transform-origin: bottom;
+            }
+          }
         }
       }
     }
@@ -457,9 +522,9 @@
       cursor: pointer;
       display: inline-block;
       margin: {
-        top: 0;
+        top: 1em;
         right: .5em;
-        bottom: 0;
+        bottom: 1em;
         left: .5em;
       }
       padding: .5em 1em;
@@ -496,7 +561,7 @@
           justify-content: center;
           padding: 1em;
           .col {
-            flex: 0 0 100%;
+            flex: 1 1 100%;
             margin: auto;
             text-align: center;
             .row {
@@ -691,6 +756,9 @@
             font-weight: 800;
         }
         }
+      }
+      p {
+        text-align: center;
       }
     }
   }

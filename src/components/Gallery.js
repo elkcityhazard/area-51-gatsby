@@ -14,13 +14,13 @@ const Gallery = () => {
       <>
         <section className="gallery">
             <h3>Gallery</h3>
-            <figure role="button" tabIndex="0" className={active === true ? 'fullscreen' : 'closed'}>
+            <figure className={active === true ? 'fullscreen' : 'closed'}>
                 <GatsbyImage 
                 key={index} 
                 className={active === true ? "fullscreen-img show-img" : "fullscreen-image"} 
                 image={gatsbyImageData}
                  />
-            <button onClick={() => setActive(false)}><FaTimes size="40" /></button>
+            <button tabIndex="0"aria-label="Close Large Image" onClick={() => setActive(false)}><FaTimes size="40" /></button>
             </figure>
             <div className="image-container">
                 {

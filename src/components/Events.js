@@ -1,29 +1,36 @@
 import React from "react";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { useStaticQuery, graphql} from "gatsby";
 import EventCard from './EventCard'
 
 const Events = () => {
   const data = useStaticQuery(query);
   const {allMarkdownRemark: {nodes:markdownRemark}} = data;
   const [value, setValue] = React.useState(0);
-  const {id} = markdownRemark;
-  const {title, description, price, startTime, endTime, startDate, endDate, slug} = markdownRemark[value].frontmatter;
+  const {title, description, price, startDate, endDate, slug} = markdownRemark[value].frontmatter;
   const {frontmatter:{img:{childImageSharp: {gatsbyImageData}}}} = markdownRemark[value];
+  const currentDate = new Date();
   
   return (
     <section className="events" id="events">
       <h3>Events</h3>
       <div className="btn-container">
         { markdownRemark.map((item, index) => {
-          return (
-            <button 
-              key={index} 
-              className={index === value ? "event-btn active-btn" : "event-btn"} 
-              onClick={() => {setValue(index)}}
-              >
-                {item.frontmatter.title}
-              </button>
-          )
+          const eventDate = new Date(item.frontmatter.startDate);
+          if (eventDate >= currentDate) {
+            return (
+              <button 
+                key={index} 
+                className={index === value ? "event-btn active-btn" : "event-btn"} 
+                onClick={() => {setValue(index)}}
+                >
+                  {item.frontmatter.title}
+                </button>
+            )
+          } else {
+            return (
+              null
+            )
+          }
         })} 
       </div>
         <div className="event-container">
