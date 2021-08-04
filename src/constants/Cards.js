@@ -16,7 +16,7 @@ const data = [
     {
         id: 2,
         title: 'Pricing',
-        text: "Party kits start at $250. Ultimate Party Package! This pays for the first 6 players, add $35 for each additional player. Recommended for Birthday parties and large groups. Schedule your event on one of our many \"WALK ON\" days. (Check events page for dates) Groups with 12 or more players may schedule private games at 9:00am to 12:00 before regular play starts. $15 extra for morning groups to play the rest of the day.",
+        text: "Party kits start at $250. This pays for the first 6 players, add $35 for each additional player. Recommended for Birthday parties and large groups. Schedule your event on one of our many \"WALK ON\" days. (Check events page for dates) Groups with 12 or more players may schedule private games at 9:00am to 12:00 before regular play starts. $15 extra for morning groups to play the rest of the day.",
         url: "#pricing",
         icon: <RiAliensLine size="60"/>,
         image: <StaticImage objectFit="cover"  src='../images/girl-paintball-player.jpg' alt="a girl paintball player" placeholder="blurred" loading="lazy" imgClassName="card-img"  layout="fullWidth" style={{gridArea: "1/1"}} />
