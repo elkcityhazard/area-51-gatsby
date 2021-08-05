@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'gatsby-plugin-react-helmet'
+import {Helmet} from 'react-helmet'
 
 import NavBar from './NavBar';
 import Footer from './Footer';
