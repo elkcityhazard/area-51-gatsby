@@ -39,7 +39,7 @@ const Gallery = () => {
                  />
             <button aria-label="close large image" onClick={() => setActive(false)}><FaTimes size="40" /></button>
             </div>
-            <div className="image-container">
+            <div className="image-container" aria-label="image container">
                 {
                    nodes.map((item, index) => {
                       return (<GatsbyImage key={index} role="button" tabIndex={index} className="gallery-img" image={item.childImageSharp.gatsbyImageData} onClick={() => {

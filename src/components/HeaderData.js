@@ -25,7 +25,7 @@ const HeaderData = ({children}) => {
             <p>{description}</p>
             </div>
             <div className="col">
-                <Link to="#contact">Get Started</Link>
+                <Link to="#contact">Contact Us Now</Link>
             </div>
         </header>
     )
