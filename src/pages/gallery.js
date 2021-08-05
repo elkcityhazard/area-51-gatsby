@@ -32,7 +32,7 @@ const Gallery = () => {
             <section className="gallery">
             <h3>Gallery</h3>
             <div className={active === true ? 'fullscreen' : 'closed'}>
-                <GatsbyImage role="button" tabIndex="0"
+                <GatsbyImage role="button"
                 key={index} 
                 className={active === true ? "fullscreen-img show-img" : "fullscreen-image"} 
                 image={gatsbyImageData}

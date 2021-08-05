@@ -20,9 +20,9 @@ const Gallery = () => {
                 className={active === true ? "fullscreen-img show-img" : "fullscreen-image"} 
                 image={gatsbyImageData}
                  />
-            <button tabIndex="0"aria-label="Close Large Image" onClick={() => setActive(false)}><FaTimes size="40" /></button>
+            <button aria-label="Close Large Image" onClick={() => setActive(false)}><FaTimes size="40" /></button>
             </figure>
-            <div className="image-container">
+            <div className="image-container" aria-label="image container">
                 {
                    nodes.map((item, index) => {
                       return (

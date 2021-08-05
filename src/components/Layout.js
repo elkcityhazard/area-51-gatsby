@@ -1,4 +1,5 @@
 import React from 'react'
+import Helment from 'react-helment'
 import NavBar from './NavBar';
 import GbiBridged from './Header'
 import HeaderData from './HeaderData'
@@ -8,6 +9,10 @@ import BrandBar from './BrandBar'
 function Layout({children}) {
     return (
         <>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <html lang="en" />
+        </Helmet>
         <GbiBridged>
       <HeaderData>
         <NavBar />
