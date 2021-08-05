@@ -1,5 +1,5 @@
 import React from 'react'
-import Helment from 'react-helment'
+import Helmet from 'gatsby-plugin-react-helmet'
 import NavBar from './NavBar';
 import GbiBridged from './Header'
 import HeaderData from './HeaderData'
