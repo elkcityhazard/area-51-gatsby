@@ -42,7 +42,7 @@ const Gallery = () => {
             <div className="image-container" aria-label="image container">
                 {
                    nodes.map((item, index) => {
-                      return (<GatsbyImage key={index} role="button" tabIndex={index} className="gallery-img" image={item.childImageSharp.gatsbyImageData} onClick={() => {
+                      return (<GatsbyImage key={index} role="button"  className="gallery-img" image={item.childImageSharp.gatsbyImageData} onClick={() => {
                           setIndex(index)
                           setActive(true)
                       }}/>

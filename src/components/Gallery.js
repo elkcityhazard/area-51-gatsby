@@ -26,7 +26,7 @@ const Gallery = () => {
                 {
                    nodes.map((item, index) => {
                       return (
-                        <div role="button" tabIndex={index}
+                        <div role="button" 
                         onKeyUp={
                           (e) => {if (e.key === 'enter') {
                             setActive(true) 

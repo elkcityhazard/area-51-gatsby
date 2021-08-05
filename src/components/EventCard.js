@@ -37,7 +37,7 @@ function EventCard(props) {
             </div>
           </div> 
           <div className="row">
-            <Link to={props.slug} className="learn-more">Learn More</Link>
+            <Link to={props.slug} className="learn-more">{props.title}</Link>
           </div>
         </div>
       </div>
